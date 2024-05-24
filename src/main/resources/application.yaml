@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: llm-rag
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sbdocs
+    username: admin
+    password: password
+  ai:
+    mistralai:
+      api-key: ${mistral-api-key}
+      base-url: https://api.mistral.ai/v1/chat/completions
+      chat:
+        options:
+          model: open-mistral-7b
+  vectorstore:
+    pgvector:
+    index-type: HNSW
+    distance-type: COSINE_DISTANCE
+    dimension: 1536
+
+  main:
+    banner-mode: off
+
